@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../color.dart';
 import '../components/custom_button.dart';
 import '../components/custom_header.dart';
+import 'challenge_screen1.dart';
 import 'home_screen2.dart';
 
 
@@ -38,9 +40,12 @@ class _ThirdHomeScreenState extends State<ThirdHomeScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                customButton(
-                  context,
-                  (context) => const ThirdHomeScreen(),
+                CustomButton(
+                  backgroundColor: lightBlueColor,
+                  textBorderColor: lightBlackBorderColor,
+                  navigateTo: (context) => const FirstChallengeScreen(),
+                  title: 'التالي',
+                  
                 ),
               ],
             ),

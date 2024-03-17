@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../color.dart';
 import 'home_screen3.dart';
 import '../components/custom_button.dart';
 import '../components/custom_header.dart';
@@ -29,9 +30,12 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                customButton(
-                  context,
-                  (context) => const ThirdHomeScreen(),
+                CustomButton(
+                  backgroundColor: lightBlueColor,
+                  textBorderColor: lightBlackBorderColor,
+                  navigateTo: (context) => const ThirdHomeScreen(),
+                  title: 'التالي',
+                  
                 ),
               ],
             ),
