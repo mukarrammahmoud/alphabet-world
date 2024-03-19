@@ -10,11 +10,16 @@ import 'package:learletters/screens/levels.dart';
 
 import '../components/custom_container_latter.dart';
 import '../components/custom_message.dart';
-import 'challenge_screen1.dart';
 
-class Levels extends StatelessWidget {
-  const Levels({super.key});
+class ScreenPoints extends StatefulWidget {
+  const ScreenPoints({super.key, required this.pathImage});
 
+  @override
+  State<ScreenPoints> createState() => _ScreenPointsState();
+  final String pathImage;
+}
+
+class _ScreenPointsState extends State<ScreenPoints> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +28,7 @@ class Levels extends StatelessWidget {
         child: ListView(
           children: [
             const SizedBox(
-              height: 60,
+              height: 90,
             ),
             Stack(
               clipBehavior: Clip.none,
@@ -68,10 +73,10 @@ class Levels extends StatelessWidget {
                           ),
                         ],
                       ),
-                      // ...List.generate(28, (index) => CircleAvatar())
                       Container(
                           height: 80,
                           child: ListView.builder(
+                            reverse: true,
                             scrollDirection: Axis.horizontal,
                             itemCount: 28,
                             itemBuilder: (context, index) {
@@ -85,13 +90,13 @@ class Levels extends StatelessWidget {
                   right: 2,
                   top: -10,
                   child: Image.asset(
-                    "assets/images/haneen.png",
+                    widget.pathImage,
                     height: 100,
                   ),
                 ),
                 Positioned(
                     right: 70,
-                    top: -50,
+                    top: -80,
                     child: customMessage("لنرى مالذي انجزته")),
               ],
             ),
@@ -102,7 +107,7 @@ class Levels extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 customContEx("assets/images/c.png", "وصل",
-                    (context) => const FirstHomeScreen(), context),
+                    (context) => const LevelsScreen(), context),
                 customContEx("assets/images/lock.png", "", null, context),
               ],
             ),

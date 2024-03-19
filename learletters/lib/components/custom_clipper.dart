@@ -16,5 +16,3 @@ class MyCustomClipper extends CustomClipper<Path> {
     return true;
   }
 }
-
-

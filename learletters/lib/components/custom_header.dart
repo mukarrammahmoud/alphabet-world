@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomHeader extends StatefulWidget {
-  final WidgetBuilder? navigateTo;
-  const CustomHeader({super.key, required this.navigateTo});
+  late WidgetBuilder? navigateTo;
+  CustomHeader({required this.navigateTo});
 
   @override
-  // ignore: library_private_types_in_public_api
   _CustomHeaderState createState() => _CustomHeaderState();
 }
 
@@ -18,11 +17,11 @@ class _CustomHeaderState extends State<CustomHeader> {
         children: [
           GestureDetector(
             child: Stack(
-              alignment: Alignment.center,
               children: [
                 Image.asset("assets/images/buttonbackground.png"),
                 Image.asset("assets/images/backword.png"),
               ],
+              alignment: Alignment.center,
             ),
             onTap: () {
               Navigator.of(context).pop();
@@ -30,11 +29,11 @@ class _CustomHeaderState extends State<CustomHeader> {
           ),
           GestureDetector(
             child: Stack(
-              alignment: Alignment.center,
               children: [
                 Image.asset("assets/images/buttonbackground.png"),
                 Image.asset("assets/images/forword.png"),
               ],
+              alignment: Alignment.center,
             ),
             onTap: () {
               if (widget.navigateTo != null) {

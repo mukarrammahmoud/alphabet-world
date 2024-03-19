@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:learletters/screens/screen_choose.dart';
-import 'package:learletters/screens/splash_screen.dart';
-import 'package:learletters/screens/stipper_screen.dart';
 
-void main() => runApp(const MyApp());
+import 'package:learletters/screens/splash_screen.dart';
+
+
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Blabeloo"),
-      home:  SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }

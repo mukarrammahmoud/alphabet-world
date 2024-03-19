@@ -4,17 +4,19 @@ import 'package:learletters/components/custom_button.dart';
 import '../../color.dart';
 import '../../components/custom_header.dart';
 import '../../components/custom_progress_bar.dart';
+import '../components/custom_lettercolumn.dart';
 import '../components/custom_message.dart';
-import 'challenge_screen3.dart';
 
-class SecondChallengeScreen extends StatefulWidget {
-  const SecondChallengeScreen({Key? key}) : super(key: key);
+import 'challenge_screen4.dart';
+
+class ThirdChallengeScreen extends StatefulWidget {
+  const ThirdChallengeScreen({Key? key}) : super(key: key);
 
   @override
-  _SecondChallengeScreenState createState() => _SecondChallengeScreenState();
+  _ThirdChallengeScreenState createState() => _ThirdChallengeScreenState();
 }
 
-class _SecondChallengeScreenState extends State<SecondChallengeScreen> {
+class _ThirdChallengeScreenState extends State<ThirdChallengeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class _SecondChallengeScreenState extends State<SecondChallengeScreen> {
           child: Column(
             children: [
               CustomHeader(
-                navigateTo: (context) => SecondChallengeScreen(),
+                navigateTo: (context) => ThirdChallengeScreen(),
               ),
               SizedBox(
                 height: 10,
@@ -35,13 +37,13 @@ class _SecondChallengeScreenState extends State<SecondChallengeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomProgressBar(progress: 40),
+                    CustomProgressBar(progress: 60),
                     Column(
                       children: [
                         Row(
                           children: [
                             customMessage(
-                              'يا ترى ماهو شكل الحرف الذي تسمعه',
+                              'لقد فقدت احد احرف هذه الكلمة ساعدني في العثور عليه',
                             ),
                             Image.asset("assets/images/majed.png",
                                 height: 188, width: 121),
@@ -50,13 +52,28 @@ class _SecondChallengeScreenState extends State<SecondChallengeScreen> {
                         SizedBox(
                           height: 15,
                         ),
+                        Image.asset(
+                          "assets/images/rabbit.gif",
+                          width: 256,
+                          height: 192,
+                        ),
+                        Row(
+                          textDirection: TextDirection.rtl,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CustomLetterColumn(text: ""),
+                            CustomLetterColumn(text: "ر"),
+                            CustomLetterColumn(text: "ن"),
+                            CustomLetterColumn(text: "ب"),
+                          ],
+                        ),
                       ],
                     ),
                   ],
                 ),
               ),
               CustomButton(
-                  navigateTo: (context) => ThirdChallengeScreen(),
+                  navigateTo: (context) => FourthCallengeScreen(),
                   backgroundColor: lightBlueColor,
                   textBorderColor: lightBlackBorderColor,
                   title: "التالي")

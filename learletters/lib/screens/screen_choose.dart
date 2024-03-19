@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:learletters/components/custom_button.dart';
 
-import 'package:learletters/screens/screen.dart';
+import 'package:learletters/screens/screen_points.dart';
 import '../components/custom_clipper.dart';
 import '../components/custom_text.dart';
 import '../color.dart';
@@ -27,7 +27,7 @@ class _ScreenChooseState extends State<ScreenChoose> {
   double widthHanen = 310;
   double heightMaged = 300;
   double widthMaged = 300;
-
+  String pathImage = "assets/images/haneen.png";
   Color btnColor = pinkColor;
   @override
   Widget build(BuildContext context) {
@@ -45,121 +45,118 @@ class _ScreenChooseState extends State<ScreenChoose> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Stack(children: [
-                  Expanded(
-                    child: ClipPath(
-                      clipper: MyCustomClipper(),
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            hanenColorContainer = pinkColor;
-                            majedColorContainer =
-                                majedColorContainer.withOpacity(0.1);
-                            majedColorBorder =
-                                majedColorBorder.withOpacity(0.3);
-                            visabil = true;
-                            heightMaged = 300;
-                            widthMaged = 300;
-                            heightHanen = 310;
-                            widthHanen = 310;
-                            btnColor = pinkColor;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
-                          curve: Curves.linear,
-                          width: widthHanen,
-                          height: heightHanen,
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: hanenColorBorder, width: 6),
-                              color: hanenColorContainer,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(16))),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                child: Visibility(
-                                  visible: visabil == true ? true : false,
-                                  child: Image.asset(
-                                    "assets/images/haneen.png",
-                                    color: null,
-                                    height: 180,
-                                  ),
+                  ClipPath(
+                    clipper: MyCustomClipper(),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          pathImage = "assets/images/haneen.png";
+                          hanenColorContainer = pinkColor;
+                          majedColorContainer =
+                              majedColorContainer.withOpacity(0.1);
+                          majedColorBorder =
+                              majedColorBorder.withOpacity(0.3);
+                          visabil = true;
+                          heightMaged = 300;
+                          widthMaged = 300;
+                          heightHanen = 310;
+                          widthHanen = 310;
+                          btnColor = pinkColor;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(seconds: 1),
+                        width: widthHanen,
+                        height: heightHanen,
+                        decoration: BoxDecoration(
+                            border:
+                                Border.all(color: hanenColorBorder, width: 6),
+                            color: hanenColorContainer,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(16))),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              child: Visibility(
+                                visible: visabil == true ? true : false,
+                                child: Image.asset(
+                                  "assets/images/haneen.png",
+                                  color: null,
+                                  height: 180,
                                 ),
                               ),
-                              Positioned(
-                                top: 40,
-                                right: 80,
-                                child: Visibility(
-                                    visible: visabil == true ? true : false,
-                                    child: customText("حنين")),
-                              ),
-                            ],
-                          ),
+                            ),
+                            Positioned(
+                              top: 40,
+                              right: 80,
+                              child: Visibility(
+                                  visible: visabil == true ? true : false,
+                                  child: customText("حنين")),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Transform.rotate(
-                      angle: pi,
-                      child: ClipPath(
-                        clipper: MyCustomClipper(),
-                        child: InkWell(
-                          onTap: () {
-                            {
-                              setState(() {
-                                hanenColorContainer =
-                                    hanenColorContainer.withOpacity(0.1);
-                                majedColorContainer = blueColor;
-                                majedColorBorder = blueBorderColor;
-                                visabil = false;
-                                heightHanen = 300;
-                                widthHanen = 300;
-                                heightMaged = 310;
-                                widthMaged = 310;
-                                btnColor = blueBorderColor;
-                                hanenColorBorder =
-                                    hanenColorBorder.withOpacity(0.2);
-                              });
-                            }
-                          },
-                          child: AnimatedContainer(
-                            duration: Duration(seconds: 1),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: majedColorBorder, width: 6),
-                                color: majedColorContainer,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(16))),
-                            margin: EdgeInsets.all(10),
-                            width: widthMaged,
-                            height: heightMaged,
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  child: Transform.rotate(
-                                    angle: pi,
-                                    child: Visibility(
-                                      visible: visabil == true ? false : true,
-                                      child: Image.asset(
-                                        "assets/images/majed.png",
-                                        height: 180,
-                                      ),
+                  Transform.rotate(
+                    angle: pi,
+                    child: ClipPath(
+                      clipper: MyCustomClipper(),
+                      child: InkWell(
+                        onTap: () {
+                          {
+                            setState(() {
+                              pathImage = "assets/images/majed.png";
+                              hanenColorContainer =
+                                  hanenColorContainer.withOpacity(0.1);
+                              majedColorContainer = blueColor;
+                              majedColorBorder = blueBorderColor;
+                              visabil = false;
+                              heightHanen = 300;
+                              widthHanen = 300;
+                              heightMaged = 310;
+                              widthMaged = 310;
+                              btnColor = blueBorderColor;
+                              hanenColorBorder =
+                                  hanenColorBorder.withOpacity(0.2);
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(seconds: 1),
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: majedColorBorder, width: 6),
+                              color: majedColorContainer,
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(16))),
+                          margin: const EdgeInsets.all(10),
+                          width: widthMaged,
+                          height: heightMaged,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                child: Transform.rotate(
+                                  angle: pi,
+                                  child: Visibility(
+                                    visible: visabil == true ? false : true,
+                                    child: Image.asset(
+                                      "assets/images/majed.png",
+                                      height: 180,
                                     ),
                                   ),
                                 ),
-                                Positioned(
-                                    top: 40,
-                                    right: 80,
-                                    child: Transform.rotate(
-                                        angle: pi,
-                                        child: Visibility(
-                                            visible:
-                                                visabil == true ? false : true,
-                                            child: customText("ماجد")))),
-                              ],
-                            ),
+                              ),
+                              Positioned(
+                                  top: 40,
+                                  right: 80,
+                                  child: Transform.rotate(
+                                      angle: pi,
+                                      child: Visibility(
+                                          visible:
+                                              visabil == true ? false : true,
+                                          child: customText("ماجد")))),
+                            ],
                           ),
                         ),
                       ),
@@ -177,7 +174,7 @@ class _ScreenChooseState extends State<ScreenChoose> {
               backgroundColor: btnColor,
               textBorderColor: lightBlackBorderColor,
               title: "اختيار",
-              navigateTo: (context) => Levels(),
+              navigateTo: (context) => ScreenPoints(pathImage: pathImage),
             ),
           )
         ],

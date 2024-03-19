@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../screens/home_screen1.dart';
-import '../components/custom_header.dart';
+import '../../components/custom_header.dart';
+import 'home_screen1.dart';
+
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key}) : super(key: key);
 
@@ -15,7 +16,7 @@ class _IntroScreenState extends State<IntroScreen> {
     return Scaffold(
       body: Center(
         child: CustomHeader(
-          navigateTo: (context) =>const FirstHomeScreen(),
+          navigateTo: (context) => FirstHomeScreen(),
         ),
       ),
     );
